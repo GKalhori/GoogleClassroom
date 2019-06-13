@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginPage">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:text="Sign Up"
+
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="617dp" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="239dp"
+        android:layout_height="46dp"
+        android:background="#B8C4CE"
+        android:text="Log In"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="258dp" />
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="237dp"
+        android:layout_height="46dp"
+        android:background="#F3F0F0"
+
+        android:ems="10"
+        android:hint="  Username"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="238dp"
+        android:layout_height="46dp"
+        android:background="#F3F0F0"
+        android:ems="10"
+        android:hint="  Password"
+
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="157dp"
+        android:layout_height="32dp"
+        android:text="Don't Have an account?"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="626dp" />
+
+
+</android.support.constraint.ConstraintLayout>
