@@ -20,6 +20,7 @@
         android:layout_width="239dp"
         android:layout_height="46dp"
         android:background="#B8C4CE"
+        android:onClick="enter"
         android:text="Log In"
         android:textColor="#FFFFFF"
         tools:layout_editor_absoluteX="81dp"
