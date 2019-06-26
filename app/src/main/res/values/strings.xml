@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Google Classroom</string>
     <string name="get_started">GET STARTED</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t Have an account?</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="username">Username</string>
 </resources>

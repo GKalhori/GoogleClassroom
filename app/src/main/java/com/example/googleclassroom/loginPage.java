@@ -1,5 +1,6 @@
 package com.example.googleclassroom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,9 @@ import android.widget.EditText;
 
 public class loginPage extends AppCompatActivity {
     // main activity = login page
-    EditText username,password;
-    Button login,register;
+
+    EditText username, password;
+    Button login, register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class loginPage extends AppCompatActivity {
         login = (Button) findViewById(R.id.loginButton);
         username = (EditText) findViewById(R.id.usernameText);
         password = (EditText) findViewById(R.id.passwordText);
+        register = (Button) findViewById(R.id.registerButton);
 
         login.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -32,21 +35,28 @@ public class loginPage extends AppCompatActivity {
             else if (password.getText().toString().length() == 0 )
             username.setError("Please Enter Password!");
 
-            // pass must be longer than 5 chars
-
+            else if (password.getText().toString().length()<6)
+                username.setError("Password Must Be Longer than 5 Characters, Please Enter a Valid Password!");
 
             else {
                 // do async task
                 username.setError(null);
                 password.setError(null);
             }
-            enter();
+            enter(user,pass);
         }
     });
+        register = (Button) findViewById(R.id.registerButton);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginPage.this, SignUpPage.class));
+            }
+        });
     }
-    public void enter(){
+    public void enter(String user,String pass){
         ClientHandler clientHandler = new ClientHandler();
-        clientHandler.execute(username.getText().toString(),password.getText().toString());
+        clientHandler.execute(user,pass);
 
     }
 }
