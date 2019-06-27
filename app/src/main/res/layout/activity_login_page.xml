@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginPage">
+    tools:context=".loginPage"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/registerButton"
@@ -16,6 +17,7 @@
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="73dp"
         android:text="@string/sign_up"
+        android:background="#6D2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,13 +31,15 @@
         android:layout_marginTop="258dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="427dp"
-        android:background="#2196F3"
-        android:text="Log In"
+        android:background="#A62196F3"
+        android:text="@string/login"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
 
     <EditText
         android:id="@+id/usernameText"
@@ -43,12 +47,16 @@
         android:layout_height="46dp"
 
         android:autofillHints=""
-        android:background="#D2F3F0F0"
+        android:background="#D2BFE0BF"
         android:ems="10"
-        android:hint="  Username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/passwordText"
@@ -60,14 +68,16 @@
 
         android:layout_marginBottom="502dp"
         android:autofillHints=""
-        android:background="#D2F3F0F0"
+        android:background="#D2BFE0BF"
         android:ems="10"
-        android:hint="  Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" tools:targetApi="o" />
 
     <TextView
         android:id="@+id/textView2"
@@ -78,8 +88,10 @@
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="73dp"
         android:text="@string/don_t_have_an_account"
+        android:textColor="#4C4D50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

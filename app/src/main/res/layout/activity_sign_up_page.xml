@@ -13,8 +13,8 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="225dp" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="248dp" />
 
     <EditText
         android:id="@+id/Register_Password"
@@ -23,16 +23,29 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="284dp" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="301dp" />
 
-    <ImageView
-        android:id="@+id/ProPic"
+    <Button
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="57dp"
-        tools:srcCompat="@tools:sample/avatars[5]" />
+        android:layout_gravity="center_horizontal"
+        android:text="Select or Capture Image"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="172dp" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        app:srcCompat="@drawable/avatar"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="43dp" />
 
     <Button
         android:id="@+id/Register_Button"
@@ -42,7 +55,7 @@
         android:text="Register"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="424dp" />
+        tools:layout_editor_absoluteY="431dp" />
 
     <EditText
         android:id="@+id/Confirm_Password"
@@ -53,7 +66,7 @@
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         android:singleLine="false"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="342dp" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="359dp" />
 
 </android.support.constraint.ConstraintLayout>
