@@ -23,23 +23,26 @@ public class SignUpPage extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()){
                     case R.id.registerButton:
+                        String user = username.getText().toString();
+                        String pass = password.getText().toString();
+                        User registeredData = new User(user,pass);
+                        if (username.getText().toString().length() == 0)
+                            username.setError("Please Enter Username!");
 
+                        else if (password.getText().toString().length() == 0)
+                            username.setError("Please Enter Password!");
+                        else if (password.getText().toString().length()<6)
+                            username.setError("Password Must Be Longer than 5 Characters, Please Enter a Valid Password!");
+
+                        else {
+                            // do async task
+                            username.setError(null);
+                            password.setError(null);
+                        }
                         break;
                 }
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                User registeredData = new User(user,pass);
-                if (username.getText().toString().length() == 0)
-                    username.setError("Please Enter Username!");
 
-                else if (password.getText().toString().length() == 0)
-                    username.setError("Please Enter Password!");
 
-                else {
-                    // do async task
-                    username.setError(null);
-                    password.setError(null);
-                }
             }
         });
     }

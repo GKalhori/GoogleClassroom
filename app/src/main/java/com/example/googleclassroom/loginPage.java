@@ -73,6 +73,6 @@ public class loginPage extends AppCompatActivity {
     public void enter(String user,String pass){
         ClientHandler clientHandler = new ClientHandler();
         clientHandler.execute(user,pass);
-//do
+
     }
 }
