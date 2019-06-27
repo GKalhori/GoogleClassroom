@@ -12,6 +12,7 @@ public class loginPage extends AppCompatActivity {
 
     EditText username, password;
     Button login, register;
+    UserLocalStore userLocalStore ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +23,26 @@ public class loginPage extends AppCompatActivity {
         username = (EditText) findViewById(R.id.usernameText);
         password = (EditText) findViewById(R.id.passwordText);
         register = (Button) findViewById(R.id.registerButton);
-
+        userLocalStore = new UserLocalStore(this) ;
         login.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            switch (view.getId()){
+                case  R.id.loginButton:
+
+
+
+
+                    break;
+                case R.id.registerButton:
+                    startActivity(new Intent(loginPage.this,SignUpPage.class));
+
+                    break;
+            }
             String user = username.getText().toString();
             String pass = password.getText().toString();
-
+            userLocalStore.clearUserData();
+            userLocalStore.setUserLocalDatabase(false);
             if( username.getText().toString().length()== 0 )
                 username.setError("Please Enter Username!");
 
@@ -57,6 +71,6 @@ public class loginPage extends AppCompatActivity {
     public void enter(String user,String pass){
         ClientHandler clientHandler = new ClientHandler();
         clientHandler.execute(user,pass);
-
+//do
     }
 }

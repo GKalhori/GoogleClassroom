@@ -1,5 +1,6 @@
 package com.example.googleclassroom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +21,14 @@ public class SignUpPage extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                switch (view.getId()){
+                    case R.id.registerButton:
+
+                        break;
+                }
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-
+                User registeredData = new User(user,pass);
                 if (username.getText().toString().length() == 0)
                     username.setError("Please Enter Username!");
 
