@@ -29,7 +29,9 @@ public class loginPage extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case  R.id.loginButton:
-
+                    User user = new User(null,null) ;
+                    userLocalStore.storeUserData(user);
+                    userLocalStore.setUserLoggedIn(true);
 
 
 
@@ -42,7 +44,7 @@ public class loginPage extends AppCompatActivity {
             String user = username.getText().toString();
             String pass = password.getText().toString();
             userLocalStore.clearUserData();
-            userLocalStore.setUserLocalDatabase(false);
+            userLocalStore.setUserLoggedIn(false);
             if( username.getText().toString().length()== 0 )
                 username.setError("Please Enter Username!");
 

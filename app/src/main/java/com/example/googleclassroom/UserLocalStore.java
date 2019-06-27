@@ -21,10 +21,19 @@ public class UserLocalStore {
         User storedUser = new User(username,password) ;
         return storedUser ;
     }
-    public void setUserLocalDatabase(boolean loggedIn){
+    public void setUserLoggedIn(boolean loggedIn){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit() ;
         spEditor.putBoolean("loggedIn",loggedIn) ;
         spEditor.commit() ;
+
+    }
+    public boolean getUserLoggedIn(){
+        if (userLocalDatabase.getBoolean("loggedIn",false)==true){
+            return true ;
+        }
+        else{
+            return false ;
+        }
 
     }
     public void clearUserData(){
