@@ -6,63 +6,63 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class loginPage extends AppCompatActivity {
-    // main activity = login page
+    // main activity = login page (Youtube)
 
-    EditText username, password;
+    EditText usernameLogin, passwordLogin;
     Button login, register;
-    UserLocalStore userLocalStore ;
+    TextView textView;
+    UserLocalStore userLocalStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
+        usernameLogin = (EditText) findViewById(R.id.usernameLogin);
+        passwordLogin = (EditText) findViewById(R.id.passwordLogin);
         login = (Button) findViewById(R.id.loginButton);
-        username = (EditText) findViewById(R.id.usernameText);
-        password = (EditText) findViewById(R.id.passwordText);
-        register = (Button) findViewById(R.id.registerButton);
-        userLocalStore = new UserLocalStore(this) ;
+        register = (Button) findViewById(R.id.SignUpButton);
+        textView = (TextView) findViewById(R.id.textView);
+        // userLocalStore = new UserLocalStore(this);
+
+
         login.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()){
-                case  R.id.loginButton:
-                    User user = new User(null,null) ;
-                    userLocalStore.storeUserData(user);
-                    userLocalStore.setUserLoggedIn(true);
+            @Override
+            public void onClick(View view) {
 
+                String user_get = usernameLogin.getText().toString();
+                String pass_get = passwordLogin.getText().toString();
+                enter(user_get, pass_get); // where is the result????
 
+                if (passwordLogin.getText().toString().length() == 0 && usernameLogin.getText().toString().length() == 0) {
+                    passwordLogin.setError("Password field can't be empty!");
+                    usernameLogin.setError("Username field can't be empty!");
+                } else if (usernameLogin.getText().toString().length() == 0)
+                    usernameLogin.setError("Username field can't be empty!");
 
-                    break;
-                case R.id.registerButton:
-                    startActivity(new Intent(loginPage.this,SignUpPage.class));
+                else if (passwordLogin.getText().toString().length() == 0)
+                    passwordLogin.setError("Password field can't be empty!");
 
-                    break;
+                else {
+                    usernameLogin.setError(null);
+                    passwordLogin.setError(null);
+                }
+
+//                User user = new User(null, null);
+//                userLocalStore.storeUserData(user);
+//                userLocalStore.setUserLoggedIn(true);
+//                userLocalStore.clearUserData();
+//                userLocalStore.setUserLoggedIn(false);
+
+                // if everthing in server data is ok fo to the first page
+                if (user_get.equals("a") && pass_get.equals("a")) //sample case
+                    startActivity(new Intent(loginPage.this, firstPage.class));
             }
-            String user = username.getText().toString();
-            String pass = password.getText().toString();
-            userLocalStore.clearUserData();
-            userLocalStore.setUserLoggedIn(false);
-            if( username.getText().toString().length()== 0 )
-                username.setError("Please Enter Username!");
+        });
 
-            else if (password.getText().toString().length() == 0 )
-            username.setError("Please Enter Password!");
-
-            else if (password.getText().toString().length()<6)
-                username.setError("Password Must Be Longer than 5 Characters, Please Enter a Valid Password!");
-
-            else {
-                // do async task
-                username.setError(null);
-                password.setError(null);
-            }
-            enter(user,pass);
-        }
-    });
-        register = (Button) findViewById(R.id.registerButton);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,9 +70,9 @@ public class loginPage extends AppCompatActivity {
             }
         });
     }
-    public void enter(String user,String pass){
-        ClientHandler clientHandler = new ClientHandler();
-        clientHandler.execute(user,pass);
 
+    public void enter(String user, String pass) {
+        ClientHandler clientHandler = new ClientHandler();
+        clientHandler.execute(user, pass);
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".loginPage">
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/SignUpButton"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="262dp"
@@ -30,15 +30,17 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="427dp"
         android:background="#B8C4CE"
-        android:text="@string/log_in"
+        android:text="Login"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
 
     <EditText
-        android:id="@+id/usernameText"
+        android:id="@+id/usernameLogin"
         android:layout_width="237dp"
         android:layout_height="46dp"
         android:layout_marginStart="80dp"
@@ -53,11 +55,13 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229" />
 
     <EditText
-        android:id="@+id/passwordText"
+        android:id="@+id/passwordLogin"
         android:layout_width="238dp"
         android:layout_height="46dp"
         android:layout_marginStart="80dp"
@@ -72,11 +76,13 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="157dp"
         android:layout_height="32dp"
         android:layout_marginStart="95dp"
