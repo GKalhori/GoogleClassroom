@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class loginPage extends AppCompatActivity {
     // main activity = login page (Youtube)
 
-    EditText username, password;
+    EditText usernameLogin, passwordLogin;
     Button login, register;
+    TextView textView;
     UserLocalStore userLocalStore;
 
     @Override
@@ -19,30 +21,35 @@ public class loginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        username = (EditText) findViewById(R.id.usernameText);
-        password = (EditText) findViewById(R.id.passwordText);
+        usernameLogin = (EditText) findViewById(R.id.usernameLogin);
+        passwordLogin = (EditText) findViewById(R.id.passwordLogin);
         login = (Button) findViewById(R.id.loginButton);
-        register = (Button) findViewById(R.id.registerButton);
-        userLocalStore = new UserLocalStore(this);
+        register = (Button) findViewById(R.id.SignUpButton);
+        textView = (TextView) findViewById(R.id.textView);
+        // userLocalStore = new UserLocalStore(this);
 
-        String user_get = username.getText().toString();
-        String pass_get = password.getText().toString();
-
-        if (username.getText().toString().length() == 0)
-            username.setError("Username field can't be empty!");
-
-        if (password.getText().toString().length() == 0)
-            password.setError("Password field can't be empty!");
-
-        else {
-            username.setError(null);
-            password.setError(null);
-        }
-        enter(user_get, pass_get);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String user_get = usernameLogin.getText().toString();
+                String pass_get = passwordLogin.getText().toString();
+                enter(user_get, pass_get); // where is the result????
+
+                if (passwordLogin.getText().toString().length() == 0 && usernameLogin.getText().toString().length() == 0) {
+                    passwordLogin.setError("Password field can't be empty!");
+                    usernameLogin.setError("Username field can't be empty!");
+                } else if (usernameLogin.getText().toString().length() == 0)
+                    usernameLogin.setError("Username field can't be empty!");
+
+                else if (passwordLogin.getText().toString().length() == 0)
+                    passwordLogin.setError("Password field can't be empty!");
+
+                else {
+                    usernameLogin.setError(null);
+                    passwordLogin.setError(null);
+                }
 
 //                User user = new User(null, null);
 //                userLocalStore.storeUserData(user);
@@ -51,7 +58,8 @@ public class loginPage extends AppCompatActivity {
 //                userLocalStore.setUserLoggedIn(false);
 
                 // if everthing in server data is ok fo to the first page
-                //startActivity(new Intent(loginPage.this, firstPage.class));
+                if (user_get.equals("a") && pass_get.equals("a")) //sample case
+                    startActivity(new Intent(loginPage.this, firstPage.class));
             }
         });
 
