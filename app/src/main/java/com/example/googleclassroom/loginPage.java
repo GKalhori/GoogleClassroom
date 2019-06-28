@@ -8,61 +8,53 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class loginPage extends AppCompatActivity {
-    // main activity = login page
+    // main activity = login page (Youtube)
 
     EditText username, password;
     Button login, register;
-    UserLocalStore userLocalStore ;
+    UserLocalStore userLocalStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        login = (Button) findViewById(R.id.loginButton);
         username = (EditText) findViewById(R.id.usernameText);
         password = (EditText) findViewById(R.id.passwordText);
+        login = (Button) findViewById(R.id.loginButton);
         register = (Button) findViewById(R.id.registerButton);
-        userLocalStore = new UserLocalStore(this) ;
-        login.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()){
-                case  R.id.loginButton:
-                    User user = new User(null,null) ;
-                    userLocalStore.storeUserData(user);
-                    userLocalStore.setUserLoggedIn(true);
+        userLocalStore = new UserLocalStore(this);
 
+        String user_get = username.getText().toString();
+        String pass_get = password.getText().toString();
 
+        if (username.getText().toString().length() == 0)
+            username.setError("Username field can't be empty!");
 
-                    break;
-                case R.id.registerButton:
-                    startActivity(new Intent(loginPage.this,SignUpPage.class));
+        if (password.getText().toString().length() == 0)
+            password.setError("Password field can't be empty!");
 
-                    break;
-            }
-            String user = username.getText().toString();
-            String pass = password.getText().toString();
-            userLocalStore.clearUserData();
-            userLocalStore.setUserLoggedIn(false);
-            if( username.getText().toString().length()== 0 )
-                username.setError("Please Enter Username!");
-
-            else if (password.getText().toString().length() == 0 )
-            username.setError("Please Enter Password!");
-
-            else if (password.getText().toString().length()<6)
-                username.setError("Password Must Be Longer than 5 Characters, Please Enter a Valid Password!");
-
-            else {
-                // do async task
-                username.setError(null);
-                password.setError(null);
-            }
-            enter(user,pass);
+        else {
+            username.setError(null);
+            password.setError(null);
         }
-    });
-        register = (Button) findViewById(R.id.registerButton);
+        enter(user_get, pass_get);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                User user = new User(null, null);
+//                userLocalStore.storeUserData(user);
+//                userLocalStore.setUserLoggedIn(true);
+//                userLocalStore.clearUserData();
+//                userLocalStore.setUserLoggedIn(false);
+
+                // if everthing in server data is ok fo to the first page
+                //startActivity(new Intent(loginPage.this, firstPage.class));
+            }
+        });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,9 +62,9 @@ public class loginPage extends AppCompatActivity {
             }
         });
     }
-    public void enter(String user,String pass){
+
+    public void enter(String user, String pass) {
         ClientHandler clientHandler = new ClientHandler();
-        clientHandler.execute(user,pass);
-//do
+        clientHandler.execute(user, pass);
     }
 }

@@ -9,10 +9,10 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="174dp"
+        android:layout_width="150dp"
         android:layout_height="141dp"
         app:srcCompat="@drawable/logo_gray"
-        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteX="130dp"
         tools:layout_editor_absoluteY="170dp" />
 
     <TextView

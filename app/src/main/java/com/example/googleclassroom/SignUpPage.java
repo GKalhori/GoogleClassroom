@@ -15,31 +15,35 @@ public class SignUpPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
+
         username = (EditText) findViewById(R.id.usernameText);
         password = (EditText) findViewById(R.id.passwordText);
         signUp = (Button) findViewById(R.id.loginButton);
+
+        String user_get = username.getText().toString();
+        String pass_get = password.getText().toString();
+
+        if (username.getText().toString().length() == 0)
+            username.setError("Username field can't be empty!");
+
+        if (password.getText().toString().length() == 0)
+            password.setError("Password field can't be empty!");
+            // if (username is taken)
+
+        else if (password.getText().toString().length() < 6)
+            password.setError("Password must me longer than 5 characters,\nPlease Enter a Valid Password!");
+
+        else {
+            username.setError(null);
+            password.setError(null);
+        }
+
+        User registeredData = new User(user_get, pass_get);
+
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.registerButton:
-
-                        break;
-                }
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                User registeredData = new User(user,pass);
-                if (username.getText().toString().length() == 0)
-                    username.setError("Please Enter Username!");
-
-                else if (password.getText().toString().length() == 0)
-                    username.setError("Please Enter Password!");
-
-                else {
-                    // do async task
-                    username.setError(null);
-                    password.setError(null);
-                }
+                startActivity(new Intent(SignUpPage.this, firstPage.class));
             }
         });
     }
