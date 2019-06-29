@@ -33,11 +33,11 @@ public class firstPage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_setting:
+            case R.id.more_vert:
                 Toast.makeText(getApplicationContext(),"you choosed this!",Toast.LENGTH_LONG).show();
                 return true ;
-            case R.id.plus_id:
-                Toast.makeText(getApplicationContext(),"you choosed plus!",Toast.LENGTH_LONG).show();
+            case R.id.add:
+                Toast.makeText(getApplicationContext(),"you choosed add!",Toast.LENGTH_LONG).show();
                 return true ;
                 default:
                     return super.onOptionsItemSelected(item);

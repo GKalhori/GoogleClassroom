@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/action_setting"
-        android:title="@string/setting_name"
-        android:visible="false"
-        app:showAsAction="never"></item>
-    <item xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/action_bar"
-        android:enabled="true"
-        android:title="@string/setting"
-        app:showAsAction="never"></item>
+    <!--<item xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/action_setting"-->
+        <!--android:title="@string/setting_name"-->
+        <!--android:visible="false"-->
+        <!--app:showAsAction="never"></item>-->
+    <!--<item xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/action_bar"-->
+        <!--android:enabled="true"-->
+        <!--android:title="@string/setting"-->
+        <!--app:showAsAction="never"></item>-->
 
-    <item xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/plus_id"
-        android:enabled="true"
-        android:icon="@drawable/_logo_black"
-        android:title="Plus"
-        android:visible="false"
-        app:showAsAction="never"></item>
+    <!--<item xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/plus_id"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/_logo_black"-->
+        <!--android:title="Plus"-->
+        <!--android:visible="false"-->
+        <!--app:showAsAction="never"></item>-->
     <item android:id="@+id/search_bar"
         android:title="plus"
         android:icon="@drawable/plus"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         ></item>
+    <item
+        android:id="@+id/more_vert"
+        android:icon="@drawable/baseline-more_vert-24px"
+        android:title="@string/setting_name"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/more_vertt"
+        android:title="@string/setting"
+        android:icon="@drawable/baseline-more_vert-24px"
+        app:showAsAction="never"></item>
+
+
+    <!--<item-->
+        <!--android:id="@+id/add"-->
+        <!--android:icon="@drawable/baseline-add-24px"-->
+        <!--app:showAsAction="always"></item>-->
+
 </menu>
