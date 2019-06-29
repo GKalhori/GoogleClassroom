@@ -32,10 +32,11 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
 
     }
 
+    String user_get = usernameLogin.getText().toString();
+    String pass_get = passwordLogin.getText().toString();
+
     @Override
     public void onClick(View v) {
-        String user_get = usernameLogin.getText().toString();
-        String pass_get = passwordLogin.getText().toString();
         enter(user_get, pass_get); // where is the result????
         switch (v.getId()) {
             case R.id.signUpButton:

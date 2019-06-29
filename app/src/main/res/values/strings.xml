@@ -9,7 +9,6 @@
     <string name="confirm_your_password">Confirm Your Password</string>
 
     <string name="by_joining_you_agree_to_share_contact_information_with_people_in_your_class">By joining you agree to share contact information with people in your class.</string>
-    <string name="todo">TODO</string>
     <string name="google_classroom">Google Classroom</string>
     <string name="classroom_helps_classes_communicate_ntsafe_time_and_organized">Classroom helps classes communicate, \t\t\t\t\tsafe time and organized.</string>
     <string name="username">Username</string>
@@ -24,4 +23,12 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="button">Button</string>
+    <string name="team_members">Team Members:</string>
+    <string name="google_classroom_is_a_free_web_service_developed_by_google_for_schools_that_aims_to_simplify_creating_distributing_and_grading_assignments_in_a_paperless_way_the_primary_purpose_of_google_classroom_is_to_streamline_the_process_of_sharing_files_between_teachers_and_students">Google Classroom is a free web service, developed by Google for schools, that aims to simplify creating, distributing, and grading assignments in a paperless way. The primary purpose of Google Classroom is to streamline the process of sharing files between teachers and students.</string>
+    <string name="ap_final_project_summer_2019">AP Final Project - Summer 2019</string>
+    <string name="todo">TODO</string>
+    <string name="https_github_com_kharazmireyhaneh">https://github.com/kharazmireyhaneh</string>
+    <string name="https_github_com_gkalhori">https://github.com/GKalhori</string>
+    <string name="reyhaneh_kharazmi">Reyhaneh Kharazmi</string>
+    <string name="ghazal_kalhori">Ghazal Kalhori</string>
 </resources>

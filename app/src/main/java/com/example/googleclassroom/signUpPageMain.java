@@ -78,6 +78,7 @@ public class signUpPageMain extends AppCompatActivity {
                 else {
                     usernameSignUp.setError(null);
                     passwordSignUp.setError(null);
+                    confirmPassword.setError(null);
                 }
                 if (passwordSignUp.getText().toString().length() < 6)
                     passwordSignUp.setError("Password must be longer than 5 characters");
