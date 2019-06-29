@@ -21,7 +21,7 @@
         <!--android:visible="false"-->
         <!--app:showAsAction="never"></item>-->
     <item android:id="@+id/search_bar"
-        android:title="plus"
+        android:title="@string/add"
         android:icon="@drawable/plus"
         app:showAsAction="ifRoom"
         ></item>

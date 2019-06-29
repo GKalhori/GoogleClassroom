@@ -26,4 +26,5 @@
     <string name="button">Button</string>
     <string name="setting_name">Refresh</string>
     <string name="setting">Send Google Feedback</string>
+    <string name="add">add</string>
 </resources>
