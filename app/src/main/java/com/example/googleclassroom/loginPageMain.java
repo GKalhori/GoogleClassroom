@@ -8,31 +8,37 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class loginPage extends AppCompatActivity {
-    // main activity = login page (Youtube)
+public class loginPageMain extends AppCompatActivity implements View.OnClickListener {
 
     EditText usernameLogin, passwordLogin;
-    Button login, register;
+    Button loginButton, signUpButton;
     TextView textView;
     UserLocalStore userLocalStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_login_page_main);
 
         usernameLogin = (EditText) findViewById(R.id.usernameLogin);
         passwordLogin = (EditText) findViewById(R.id.passwordLogin);
-        login = (Button) findViewById(R.id.loginButton);
-        register = (Button) findViewById(R.id.SignUpButton);
+        loginButton = (Button) findViewById(R.id.loginButton);
+        signUpButton = (Button) findViewById(R.id.signUpButton);
         textView = (TextView) findViewById(R.id.textView);
         // userLocalStore = new UserLocalStore(this);
 
+        loginButton.setOnClickListener(this);
+        signUpButton.setOnClickListener(this);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.signUpButton:
+                startActivity(new Intent(loginPageMain.this, SignUpPage.class));
+                break;
+            case R.id.loginButton:
                 String user_get = usernameLogin.getText().toString();
                 String pass_get = passwordLogin.getText().toString();
                 enter(user_get, pass_get); // where is the result????
@@ -59,20 +65,16 @@ public class loginPage extends AppCompatActivity {
 
                 // if everthing in server data is ok fo to the first page
                 if (user_get.equals("a") && pass_get.equals("a")) //sample case
-                    startActivity(new Intent(loginPage.this, firstPage.class));
-            }
-        });
+                    startActivity(new Intent(loginPageMain.this, firstPage.class));
+                break;
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginPage.this, SignUpPage.class));
-            }
-        });
+        }
     }
 
     public void enter(String user, String pass) {
         ClientHandler clientHandler = new ClientHandler();
         clientHandler.execute(user, pass);
+
+
     }
 }

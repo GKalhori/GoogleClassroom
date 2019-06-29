@@ -36,8 +36,8 @@ import java.util.Calendar;
 import java.util.List;
 
 public class SignUpPage extends AppCompatActivity {
-    EditText username, password;
-    Button signUp;
+    EditText usernameSignUp, passwordSignUp, confirmPassword;
+    Button registerButton;
     private Button btn;
     private ImageView imageview;
     private static final String IMAGE_DIRECTORY = "/demonuts";
@@ -50,33 +50,43 @@ public class SignUpPage extends AppCompatActivity {
 
         requestMultiplePermissions();
 
+        usernameSignUp = (EditText) findViewById(R.id.usernameSignUp);
+        passwordSignUp = (EditText) findViewById(R.id.passwordSignUp);
+        confirmPassword = (EditText) findViewById(R.id.confirmPassword);
+        registerButton = (Button) findViewById(R.id.registerButton);
 
-        username = (EditText) findViewById(R.id.usernameLogin);
-        password = (EditText) findViewById(R.id.passwordLogin);
-        signUp = (Button) findViewById(R.id.loginButton);
-
-        String user_get = username.getText().toString();
-        String pass_get = password.getText().toString();
-        if (username.getText().toString().length() == 0)
-            username.setError("Username field can't be empty!");
-
-        if (password.getText().toString().length() == 0)
-            password.setError("Password field can't be empty!");
-            // if (username is taken)
-
-        else if (password.getText().toString().length() < 6)
-            password.setError("Password must me longer than 5 characters,\nPlease Enter a Valid Password!");
-
-        else {
-            username.setError(null);
-            password.setError(null);
-        }
-
-        User registeredData = new User(user_get, pass_get);
-
-        signUp.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String user_get = usernameSignUp.getText().toString();
+                String pass_get = passwordSignUp.getText().toString();
+                String confirm_get = confirmPassword.getText().toString();
+                if (passwordSignUp.getText().toString().length() == 0 && usernameSignUp.getText().toString().length() == 0 && confirmPassword.getText().toString().length() == 0) {
+                    passwordSignUp.setError("Password field can't be empty!");
+                    usernameSignUp.setError("Username field can't be empty!");
+                    confirmPassword.setError("Confirm field can't be empty");
+                }
+                if (usernameSignUp.getText().toString().length() == 0)
+                    usernameSignUp.setError("Username field can't be empty!");
+
+                if (passwordSignUp.getText().toString().length() == 0)
+                    passwordSignUp.setError("Password field can't be empty!");
+                // if (username is taken)
+                if (confirmPassword.getText().toString().length() == 0)
+                    confirmPassword.setError("Confirm field can't be empty");
+                else if (passwordSignUp.getText().toString().length() < 6)
+                    passwordSignUp.setError("Password must me longer than 5 characters,\nPlease Enter a Valid Password!");
+
+                else {
+                    usernameSignUp.setError(null);
+                    passwordSignUp.setError(null);
+                }
+                if (!(confirm_get.equals(pass_get))) {
+                    passwordSignUp.setError("Password does'nt match");
+                }
+
+                User registeredData = new User(user_get, pass_get);
+                // if everthing is ok
                 startActivity(new Intent(SignUpPage.this, firstPage.class));
             }
         });
@@ -90,7 +100,6 @@ public class SignUpPage extends AppCompatActivity {
                 showPictureDialog();
             }
         });
-
     }
 
     private void showPictureDialog() {
@@ -222,5 +231,4 @@ public class SignUpPage extends AppCompatActivity {
                 .onSameThread()
                 .check();
     }
-
 }
