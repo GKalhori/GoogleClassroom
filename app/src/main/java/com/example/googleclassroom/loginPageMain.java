@@ -20,9 +20,9 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page_main);
 
-        usernameLogin = (EditText) findViewById(R.id.usernameLogin);
-        passwordLogin = (EditText) findViewById(R.id.passwordLogin);
-        loginButton = (Button) findViewById(R.id.loginButton);
+        usernameLogin = (EditText) findViewById(R.id.usernameSignUp);
+        passwordLogin = (EditText) findViewById(R.id.passwordSignUp);
+        loginButton = (Button) findViewById(R.id.registerButton);
         signUpButton = (Button) findViewById(R.id.signUpButton);
         textView = (TextView) findViewById(R.id.textView);
         // userLocalStore = new UserLocalStore(this);
@@ -32,16 +32,17 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
 
     }
 
+    String user_get = usernameLogin.getText().toString();
+    String pass_get = passwordLogin.getText().toString();
+
     @Override
     public void onClick(View v) {
+        enter(user_get, pass_get); // where is the result????
         switch (v.getId()) {
             case R.id.signUpButton:
-                startActivity(new Intent(loginPageMain.this, SignUpPage.class));
+                startActivity(new Intent(loginPageMain.this, signUpPageMain.class));
                 break;
-            case R.id.loginButton:
-                String user_get = usernameLogin.getText().toString();
-                String pass_get = passwordLogin.getText().toString();
-                enter(user_get, pass_get); // where is the result????
+            case R.id.registerButton:
 
                 if (passwordLogin.getText().toString().length() == 0 && usernameLogin.getText().toString().length() == 0) {
                     passwordLogin.setError("Password field can't be empty!");
@@ -71,10 +72,11 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
         }
     }
 
+
     public void enter(String user, String pass) {
         ClientHandler clientHandler = new ClientHandler();
         clientHandler.execute(user, pass);
-
-
     }
+
+
 }

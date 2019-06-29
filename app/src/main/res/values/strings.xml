@@ -24,7 +24,4 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="button">Button</string>
-    <string name="setting_name">Refresh</string>
-    <string name="setting">Send Google Feedback</string>
-    <string name="add">add</string>
 </resources>
