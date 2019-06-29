@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.karumi.dexter.Dexter;
+import com.karumi.dexter.Dexter ;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.DexterError;

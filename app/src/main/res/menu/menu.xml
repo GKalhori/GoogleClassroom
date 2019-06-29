@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/action_setting"
+        android:title="@string/setting_name"
+        android:visible="false"
+        app:showAsAction="never"></item>
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/action_bar"
+        android:enabled="true"
+        android:title="@string/setting"
+        app:showAsAction="never"></item>
+
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/plus_id"
+        android:enabled="true"
+        android:icon="@drawable/_logo_black"
+        android:title="Plus"
+        android:visible="false"
+        app:showAsAction="never"></item>
+    <item android:id="@+id/search_bar"
+        android:title="plus"
+        android:icon="@drawable/plus"
+        app:showAsAction="always"
+        ></item>
+</menu>
