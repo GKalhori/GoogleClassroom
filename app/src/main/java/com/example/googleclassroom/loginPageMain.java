@@ -32,12 +32,15 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
 
     }
 
-    String user_get = usernameLogin.getText().toString();
-    String pass_get = passwordLogin.getText().toString();
+
+    public void enter(String user, String pass) {
+        ClientHandler clientHandler = new ClientHandler();
+        clientHandler.execute(user, pass);
+    }
 
     @Override
     public void onClick(View v) {
-        enter(user_get, pass_get); // where is the result????
+        enter(usernameLogin.getText().toString(), passwordLogin.getText().toString()); // where is the result????
         switch (v.getId()) {
             case R.id.signUpButton:
                 startActivity(new Intent(loginPageMain.this, signUpPageMain.class));
@@ -65,18 +68,12 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
 //                userLocalStore.setUserLoggedIn(false);
 
                 // if everthing in server data is ok fo to the first page
+                String user_get = usernameLogin.getText().toString();
+                String pass_get = passwordLogin.getText().toString();
                 if (user_get.equals("a") && pass_get.equals("a")) //sample case
                     startActivity(new Intent(loginPageMain.this, firstPage.class));
                 break;
 
         }
     }
-
-
-    public void enter(String user, String pass) {
-        ClientHandler clientHandler = new ClientHandler();
-        clientHandler.execute(user, pass);
-    }
-
-
 }
