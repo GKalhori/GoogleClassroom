@@ -7,7 +7,7 @@
     tools:context=".SignUpPage">
 
     <EditText
-        android:id="@+id/Register_UserName"
+        android:id="@+id/usernameSignUp"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="96dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Register_Password"
+        android:id="@+id/passwordSignUp"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="96dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Confirm_Password"
+        android:id="@+id/confirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="96dp"
@@ -63,11 +63,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Register_Button"
+        android:id="@+id/registerButton"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="106dp"
         android:layout_height="50dp"
-        android:layout_marginStart="152dp"
         android:layout_marginTop="431dp"
         android:layout_marginEnd="153dp"
         android:layout_marginBottom="122dp"
@@ -81,7 +80,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
