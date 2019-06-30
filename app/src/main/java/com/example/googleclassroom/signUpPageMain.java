@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +30,7 @@ public class signUpPageMain extends AppCompatActivity {
         usernameSignUp = (EditText) findViewById(R.id.usernameSignUp);
         passwordSignUp = (EditText) findViewById(R.id.passwordSignUp);
         confirmPassword = (EditText) findViewById(R.id.confirmPassword);
-        registerButton = (Button) findViewById(R.id.registerButton);
+        registerButton = (Button) findViewById(R.id.loginButton);
 
         getImage = (ImageView) findViewById(R.id.getImage);
         getImageButton = (Button) findViewById(R.id.getImageButton);
