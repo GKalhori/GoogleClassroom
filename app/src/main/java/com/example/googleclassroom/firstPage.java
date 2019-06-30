@@ -1,5 +1,6 @@
 package com.example.googleclassroom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -33,8 +34,10 @@ public class firstPage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.more_vert:
-                Toast.makeText(getApplicationContext(),"you choosed this!",Toast.LENGTH_LONG).show();
+            case R.id.more_vertt:
+                Toast.makeText(getApplicationContext(),"Welcome To About Us Page",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(firstPage.this,aboutUs.class) ;
+                startActivity(intent);
                 return true ;
           //  case R.id.add:
                // Toast.makeText(getApplicationContext(),"you choosed add!",Toast.LENGTH_LONG).show();
