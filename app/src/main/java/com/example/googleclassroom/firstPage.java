@@ -15,8 +15,8 @@ public class firstPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
         android.support.v7.app.ActionBar ab = getSupportActionBar();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar) ;
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar) ;
+      //  setSupportActionBar(toolbar);
         ab.setLogo(R.drawable.ic_launcher_background);
         ab.setDisplayUseLogoEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
