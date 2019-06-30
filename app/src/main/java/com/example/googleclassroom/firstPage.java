@@ -16,7 +16,7 @@ public class firstPage extends AppCompatActivity {
         setContentView(R.layout.activity_first_page);
         android.support.v7.app.ActionBar ab = getSupportActionBar();
        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar) ;
-      //  setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
         ab.setLogo(R.drawable.ic_launcher_background);
         ab.setDisplayUseLogoEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
@@ -36,9 +36,9 @@ public class firstPage extends AppCompatActivity {
             case R.id.more_vert:
                 Toast.makeText(getApplicationContext(),"you choosed this!",Toast.LENGTH_LONG).show();
                 return true ;
-            case R.id.add:
-                Toast.makeText(getApplicationContext(),"you choosed add!",Toast.LENGTH_LONG).show();
-                return true ;
+          //  case R.id.add:
+               // Toast.makeText(getApplicationContext(),"you choosed add!",Toast.LENGTH_LONG).show();
+               // return true ;
                 default:
                     return super.onOptionsItemSelected(item);
 
