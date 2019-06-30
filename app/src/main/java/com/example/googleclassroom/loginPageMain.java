@@ -26,16 +26,13 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
         signUpButton = (Button) findViewById(R.id.signUpButton);
         textView = (TextView) findViewById(R.id.textView);
         // userLocalStore = new UserLocalStore(this);
-
         loginButton.setOnClickListener(this);
         signUpButton.setOnClickListener(this);
-
     }
 
-
     public void enter(String user, String pass) {
-        ClientHandler clientHandler = new ClientHandler();
-        clientHandler.execute(user, pass);
+        Client client = new Client();
+        client.execute(user, pass);
     }
 
     @Override
