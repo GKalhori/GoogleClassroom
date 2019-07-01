@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/more_vert"
+        android:title="Refresh"
+        ></item>
+    <item
+        android:id="@+id/more_vertt"
+        android:title="About Us"
+        ></item>
+    <item
+        android:id="@+id/close"
+        android:title="close"
+        android:icon="@drawable/ic_closee"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/joinclass"
+        android:enabled="false"
+        android:title="JOIN"
+        app:showAsAction="ifRoom" />
+
+
+</menu>

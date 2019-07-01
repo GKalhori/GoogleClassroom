@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".joinClass">
 
+    <include
+        android:id="@+id/toolbarjoin"
+        layout="@layout/toolbarjoin"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/md_light_green_700"
+        android:textDirection="ltr"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="-3dp" />
+
     <TextView
         android:id="@+id/getClassCode"
         android:layout_width="456dp"
@@ -39,4 +49,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="-301dp"
+        tools:layout_editor_absoluteY="-127dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="123dp"
+        android:layout_height="41dp"
+        android:background="#008D6161"
+        android:text="Join class"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_close"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="25dp" />
+
 </android.support.constraint.ConstraintLayout>

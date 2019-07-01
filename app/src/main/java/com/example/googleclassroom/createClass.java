@@ -13,10 +13,13 @@ public class createClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_class);
-        Toolbar toolbar = findViewById(R.id.toolbar) ;
-        setSupportActionBar(toolbar);
-        actionBar=getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
-        actionBar.setTitle("Create class");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.create) ;
+        //setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Create class");
+//        actionBar=getSupportActionBar();
+//        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
+//        actionBar.setTitle("Create class");
+
+        this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
     }
 }
