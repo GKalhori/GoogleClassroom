@@ -20,20 +20,31 @@
         <!--android:visible="false"-->
         <!--app:showAsAction="never"></item>-->
 
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/ic_add"
+        android:title="add"
+        app:showAsAction="always">
 
-    <item android:id="@+id/create"
-        android:title="Create Class"
-        app:showAsAction="never"
-        ></item>
+        <menu>
+            <item android:id="@+id/create"
+                android:title="Create Class"
+                app:showAsAction="ifRoom"
+                ></item>
+            <item
+                android:id="@+id/join"
+                android:title="Join Class"
+                app:showAsAction="ifRoom"/>
+        </menu>
 
-
+    </item>
     <item
         android:id="@+id/more_vert"
-        android:title="refresh"
+        android:title="Refresh"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/more_vertt"
-        android:title="sendFeedback"
+        android:title="About Us"
         app:showAsAction="never"></item>
 
 
