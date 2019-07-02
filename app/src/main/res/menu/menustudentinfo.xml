@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/more_vert"
+        android:title="Refresh"
+        ></item>
+    <item
+        android:id="@+id/Classess"
+        android:title="Classes"
+        />
+    <item
+        android:id="@+id/Notif"
+        android:title="Notifications"
+        />
+
+    <item
+        android:id="@+id/more_vertt"
+        android:title="About Us"
+        ></item>
+    <item
+        android:icon="@drawable/ic_mailout"
+        android:id="@+id/mail"
+        android:title="mail"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:icon="@drawable/ic_filter"
+        android:id="@+id/filter"
+        android:title="filter"
+        app:showAsAction="ifRoom"
+        />
+
+
+</menu>
