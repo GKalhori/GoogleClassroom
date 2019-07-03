@@ -29,8 +29,18 @@ public class classworkfragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.setting:
+            case R.id.Classess:
+                Intent intent = new Intent(getActivity(),firstPage.class) ;
+                startActivity(intent);
+
                 return true ;
+            case R.id.more_vertt:
+                Intent intent1 = new Intent(getActivity(),aboutUs.class) ;
+                startActivity(intent1);
+                return true ;
+            case R.id.setting:
+                Intent intent2 = new Intent(getActivity(),aboutUs.class) ;
+                startActivity(intent2);
 
             default:
                 return super.onOptionsItemSelected(item);
