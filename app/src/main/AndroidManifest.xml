@@ -10,11 +10,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Google classroom"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".studentInfo"></activity>
+        <activity android:name=".detailassignment"></activity>
+        <activity android:name=".addAssignment" />
+        <activity android:name=".studentInfo" />
         <activity android:name=".settingPage" />
         <activity android:name=".classworkPage" />
         <activity android:name=".classPage" />

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/more_vert"
+        android:title="Refresh"
+        ></item>
+    <item
+        android:id="@+id/more_vertt"
+        android:title="About Us"
+        ></item>
+    <item
+        android:icon="@drawable/ic_closee"
+        android:title="close"
+        app:showAsAction="always"
+        />
+
+<item
+    android:icon="@drawable/ic_attach"
+    android:title="attach"
+    app:showAsAction="always"
+    />
+    <item
+        android:icon="@drawable/ic_send"
+        android:title="send"
+        app:showAsAction="always" />
+
+</menu>
