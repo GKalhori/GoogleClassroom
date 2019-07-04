@@ -3,6 +3,7 @@ package com.example.googleclassroom;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,15 +49,15 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.loginButton:
                 infoCheck();
-                try {
-                    if (loginCheck())
+               // try {
+//                    if (loginCheck())
                         startActivity(new Intent(loginPageMain.this, MainActivity.class));
-                    else
+                  //  else
                         Toast.makeText(getApplicationContext(), "Username or password is wrong!", Toast.LENGTH_SHORT).show();
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+              //  } catch (IOException e) {
+                  //  e.printStackTrace();
+               // }
                 break;
         }
     }
@@ -75,46 +76,6 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
             usernameLogin.setError(null);
             passwordLogin.setError(null);
         }
-    }
-
-    public Boolean loginCheck() throws IOException {
-        socket = new Socket("localhost", 7800); //192.168.1.52
-        dos = new ObjectOutputStream(socket.getOutputStream());
-        dis = new ObjectInputStream(socket.getInputStream());
-        AtomicReference<Boolean> flag = new AtomicReference<>(false);
-
-        Thread sendMessage = new Thread(() -> {
-            String user_get = usernameLogin.getText().toString();
-            String pass_get = passwordLogin.getText().toString();
-            while (true) {
-                try {
-                    dos.writeUTF(user_get);
-                    dos.writeUTF(pass_get);
-                } catch (IOException e) {
-                    System.out.println("Error: " + e.getMessage());
-                }
-            }
-        });
-
-        Thread reciveMessage = new Thread(() -> {
-            while (true) {
-                try {
-                    Boolean receivedMessage = dis.readBoolean();
-                    if (!receivedMessage) {
-                        Toast.makeText(getApplicationContext(), "Username is taken, enter another username", Toast.LENGTH_SHORT).show();
-                        flag.set(true);
-                    }
-                } catch (IOException e) {
-                    System.out.println("Error: " + e.getMessage());
-                }
-            }
-        });
-
-        sendMessage.start();
-        reciveMessage.start();
-        if (flag.get()) {
-            return true;
-        } else
-            return true;
+        //Log.d("infochecktag","info check runed");
     }
 }
