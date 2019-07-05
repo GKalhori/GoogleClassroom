@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -47,62 +48,61 @@ public class createClass extends AppCompatActivity {
         classDescriptionText = (EditText) findViewById(R.id.classDescriptionText);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.create);
-        getSupportActionBar().setTitle("Create class");
+        getSupportActionBar().setTitle("Create Class");
         this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-        // setSupportActionBar(toolbar);
-        // actionBar=getSupportActionBar();
-        // actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
-        // actionBar.setTitle("Create class");
+//         setSupportActionBar(toolbar);
+//         actionBar=getSupportActionBar();
+//         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
+//         actionBar.setTitle("Create class");
+
+//        if (classNameText.toString()!=null && roomNumberText.toString()!=null)
+//        {
+//            getSupportActionBar().setDisplayShowTitleEnabled(true);
+//        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menuclasswork, menu);
+        inflater.inflate(R.menu.menucreate, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
             case R.id.more_vertt:
-                Toast.makeText(getApplicationContext(), "Let's go to About Us Page", Toast.LENGTH_LONG).show();
-                Intent intent1 = new Intent(createClass.this, aboutUs.class);
-                startActivity(intent1);
-                return true;
+                startActivity(new Intent(createClass.this, aboutUs.class));
+                break;
             case R.id.createclass:
-
-                String name = classNameText.getText().toString();
-                int room = Integer.parseInt(roomNumberText.getText().toString());
-                String description = classDescriptionText.getText().toString();
-                String action = "create";
-                Classes class1 = new Classes(action, name, room, description);
-                output = class1;
-
-                try {
-                    Thread.sleep(20);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(input);
-                try {
-                    if (input.equals("notValid")) {
-                        Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(createClass.this, classPage.class));
-                    }
-                } catch (NullPointerException e) {
-                    e.getMessage();
-                }
-
-                return true;
+                Log.d("ta20", "start");
+                createProcess();
+                Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(createClass.this, classPage.class));
+                break;
             case R.id.close:
-                Intent intent3 = new Intent(createClass.this, firstPage.class);
-                startActivity(intent3);
-                return true;
+                startActivity(new Intent(createClass.this, firstPage.class));
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
+    }
 
+    public void createProcess() {
+        String name = classNameText.getText().toString();
+        int room = Integer.parseInt(roomNumberText.getText().toString());
+        String description = classDescriptionText.getText().toString();
+        Classes class1 = new Classes("create", name, room, description);
+        output = class1;
+
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(input);
     }
 }
 
@@ -114,7 +114,6 @@ class MyTaskCreateClass extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-
             socket = new Socket("192.168.1.52", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
@@ -136,6 +135,7 @@ class MyTaskCreateClass extends AsyncTask<String, Void, Void> {
                         createClass.output = null;
                     }
                 }
+
             }
         }).start();
         new Thread(new Runnable() { //for receiving information

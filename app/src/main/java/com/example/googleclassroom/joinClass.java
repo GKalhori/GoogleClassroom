@@ -40,7 +40,7 @@ private ActionBar actionBar ;
                 Intent intent1 = new Intent(joinClass.this,aboutUs.class) ;
                 startActivity(intent1);
                 return true;
-            case R.id.createclass:
+            case R.id.join:
                 Toast.makeText(getApplicationContext(),"You Joined Class!",Toast.LENGTH_LONG).show();
                 Intent intent2 = new Intent(joinClass.this,classPage.class) ;
                 startActivity(intent2);

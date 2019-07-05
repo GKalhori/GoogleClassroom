@@ -21,14 +21,11 @@
         <activity android:name=".classworkPage" />
         <activity android:name=".classPage" />
         <activity android:name=".joinClass" />
-        <activity android:name=".createClass" />
         <activity android:name=".aboutUs" />
         <activity android:name=".signUpPageMain" />
         <activity android:name=".loginPageMain" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name=".firstPage" />
+        <activity android:name=".createClass" android:exported="true"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

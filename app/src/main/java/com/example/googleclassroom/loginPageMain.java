@@ -75,8 +75,7 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
     public void loginCheck() {
         String user = usernameLogin.getText().toString();
         String pass = passwordLogin.getText().toString();
-        String messageType = "login";
-        User userLogin = new User(messageType, user, pass);
+        User userLogin = new User("login", user, pass);
         output = userLogin;
         try {
             Thread.sleep(20);
