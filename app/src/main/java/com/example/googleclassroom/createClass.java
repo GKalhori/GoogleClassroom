@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.googleclassroom.utility.Classes;
+import com.example.googleclassroom.firstPage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -78,6 +79,8 @@ public class createClass extends AppCompatActivity {
             case R.id.createclass:
                 createProcess();
                 Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
+                firstPage.imageViewBoard.setVisibility(View.GONE);
+                firstPage.textViewFirstclass.setVisibility(View.GONE);
                 startActivity(new Intent(createClass.this, classPage.class));
                 break;
             case R.id.close:
