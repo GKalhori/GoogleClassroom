@@ -11,17 +11,17 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_centerInParent="true"-->
         <!--android:text="classwork fragment"-->
-        <!--android:textSize="30dp" />-->
-    <io.github.yavski.fabspeeddial.FabSpeedDial
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:fabGravity="bottom_end"
-        app:fabMenu="@menu/fabmenu"
-        app:miniFabBackgroundTint="@color/accent"
-        app:fabDrawableTint="@color/action"
-        app:miniFabTitleTextColor="@color/primary"
+        <!--&lt;!&ndash;android:textSize="30dp" />&ndash;&gt;-->
+    <!--<io.github.yavski.fabspeeddial.FabSpeedDial-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--app:fabGravity="bottom_end"-->
+        <!--app:fabMenu="@menu/fabmenu"-->
+        <!--app:miniFabBackgroundTint="@color/accent"-->
+        <!--app:fabDrawableTint="@color/action"-->
+        <!--app:miniFabTitleTextColor="@color/primary"-->
 
-        />
+        <!--/>-->
 
 </FrameLayout>

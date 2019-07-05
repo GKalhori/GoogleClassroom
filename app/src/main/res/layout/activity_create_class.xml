@@ -6,25 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".createClass">
 
-    <!--<EditText-->
-        <!--android:id="@+id/classNameText"-->
-        <!--android:layout_width="350dp"-->
-        <!--android:layout_height="41dp"-->
-        <!--android:layout_marginStart="32dp"-->
-        <!--android:layout_marginTop="53dp"-->
-        <!--android:layout_marginEnd="32dp"-->
-        <!--android:layout_marginBottom="509dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Class name (required)"-->
-        <!--android:inputType="textPersonName"-->
-        <!--android:textColorLink="9BDACD7"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
-
     <EditText
-        android:id="@+id/sectionText"
+        android:id="@+id/classNameText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -32,7 +15,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="428dp"
         android:ems="10"
-        android:hint="Section"
+        android:hint="Class Name (Required)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,23 +24,7 @@
 
 
     <EditText
-        android:id="@+id/roomText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="348dp"
-        android:ems="10"
-        android:hint="Room"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/subjectText"
+        android:id="@+id/classDescriptionText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -65,12 +32,28 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="262dp"
         android:ems="10"
-        android:hint="Subject"
+        android:hint="Description"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/roomNumberText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="38dp"
+        android:ems="10"
+        android:hint="Room (Required)"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/classDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classNameText" />
 
 
 </android.support.constraint.ConstraintLayout>
