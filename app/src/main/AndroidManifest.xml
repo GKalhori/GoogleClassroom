@@ -14,8 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CardDemoActivity"></activity>
-        <activity android:name=".classesList" />
         <activity android:name=".detailassignment" />
         <activity android:name=".addAssignment" />
         <activity android:name=".studentInfo" />
