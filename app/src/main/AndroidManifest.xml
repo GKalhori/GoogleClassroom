@@ -25,7 +25,9 @@
         <activity android:name=".signUpPageMain" />
         <activity android:name=".loginPageMain" />
         <activity android:name=".firstPage" />
-        <activity android:name=".createClass" android:exported="true"/>
+        <activity
+            android:name=".createClass"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String username;
-    private String password;
-    private String messageType;
+    private String username, password, messageType, type;
 
     public User(String messageType, String username, String pass) {
         this.messageType = messageType;
@@ -24,5 +22,13 @@ public class User implements Serializable {
 
     public String getMessageType() {
         return messageType;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 }
