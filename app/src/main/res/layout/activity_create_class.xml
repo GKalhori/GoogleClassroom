@@ -24,22 +24,6 @@
 
 
     <EditText
-        android:id="@+id/RoomNumberText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="348dp"
-        android:ems="10"
-        android:hint="Room (Required)"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/classDescriptionText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
@@ -54,6 +38,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/roomNumberText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="38dp"
+        android:ems="10"
+        android:hint="Room (Required)"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/classDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classNameText" />
 
 
 </android.support.constraint.ConstraintLayout>
