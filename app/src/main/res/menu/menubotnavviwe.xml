@@ -4,12 +4,12 @@
     <item
         android:id="@+id/people"
         android:title="People"
-        android:icon="@drawable/ic_peopleout"
+        android:icon="@drawable/ic_outpeople"
         />
     <item
         android:id="@+id/classwork"
         android:title="Classwork"
-        android:icon="@drawable/ic_homework"
+        android:icon="@drawable/ic_assignment"
         />
     <item
         android:id="@+id/stream"

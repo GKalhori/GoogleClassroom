@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.internal.NavigationMenu;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,11 +15,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+//import io.github.yavski.fabspeeddial.FabSpeedDial;
+
 public class classworkfragment extends Fragment {
+//    FabSpeedDial fabSpeedDial ;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_classwork,container,false);
+        return inflater.inflate(R.layout.fragment_classwork, container, false);
+//        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.myFAB);
+//        fab.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(),MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//fabSpeedDial = (FabSpeedDial) view.findViewById(R.id.fabSpeedDial);
+//fabSpeedDial.setMenuListener(new FabSpeedDial.MenuListener() {
+//    @Override
+//    public boolean onPrepareMenu(NavigationMenu navigationMenu) {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onMenuItemSelected(MenuItem menuItem) {
+//        return true;
+//    }
+//
+//    @Override
+//    public void onMenuClosed() {
+//
+//    }
+//});
+//return view ;
     }
 
     @Override

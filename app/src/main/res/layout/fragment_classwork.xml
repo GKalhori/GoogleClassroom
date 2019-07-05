@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     >
 
@@ -11,17 +12,39 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_centerInParent="true"-->
         <!--android:text="classwork fragment"-->
-        <!--&lt;!&ndash;android:textSize="30dp" />&ndash;&gt;-->
+        <!--/>-->
+        <!--android:textSize="30dp" />-->
+
     <!--<io.github.yavski.fabspeeddial.FabSpeedDial-->
+        <!--android:id="@+id/fabSpeedDial"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_gravity="bottom|end"-->
         <!--app:fabGravity="bottom_end"-->
         <!--app:fabMenu="@menu/fabmenu"-->
-        <!--app:miniFabBackgroundTint="@color/accent"-->
-        <!--app:fabDrawableTint="@color/action"-->
-        <!--app:miniFabTitleTextColor="@color/primary"-->
+        <!--app:miniFabBackgroundTint="?attr/color"-->
+        <!--app:miniFabDrawableTint="@color/primary_dark"-->
+        <!--app:miniFabTitleTextColor="@color/action"-->
 
+    <!--/>-->
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/myFAB"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:backgroundTint="@color/primary_dark"-->
+        <!--android:onClick="addnew"-->
+        <!--android:src="@drawable/ic_add"-->
+        <!--app:borderWidth="0dp"-->
+        <!--app:elevation="4dp"-->
+        <!--app:rippleColor="#000000"-->
         <!--/>-->
+
 
 </FrameLayout>

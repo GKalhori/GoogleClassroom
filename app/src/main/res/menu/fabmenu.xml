@@ -3,10 +3,22 @@
 
     <item
         android:id="@+id/addasign"
-        android:title="Add assignment"
+        android:title="Assignment"
+        android:icon="@drawable/ic_assignment"
+        />
+    <item
+        android:id="@+id/question"
+        android:title="Question"
+        android:icon="@drawable/ic_ask"
+        />
+    <item
+        android:id="@+id/material"
+        android:title="Material"
+        android:icon="@drawable/ic_material"
         />
     <item
         android:id="@+id/addtopic"
-        android:title="Add topic"
+        android:title="Topic"
+        android:icon="@drawable/ic_topicc"
         />
 </menu>
