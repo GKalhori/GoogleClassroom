@@ -24,16 +24,19 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gray" />
+        app:srcCompat="@drawable/logo_gray"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/textViewFirstclass"
-        android:layout_width="240dp"
-        android:layout_height="31dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/recyclerView"
+        android:layout_alignEnd="@+id/recyclerView"
         android:layout_marginStart="93dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="93dp"
-        android:text="Create a class to get started"
+        android:text="@string/create_a_class_to_get_started"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

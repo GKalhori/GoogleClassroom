@@ -21,7 +21,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.googleclassroom.createClass;
 import com.example.googleclassroom.utility.Classes;
 
 public class firstPage extends AppCompatActivity {
@@ -71,18 +70,23 @@ public class firstPage extends AppCompatActivity {
         //initializing the productlist
         classList = new ArrayList<>();
 
-        if (createClass.input.equals("created")) {
-            output = "addClass";
-            createdclass = (Classes) firstPage.input;
+        try {
+            if (createClass.input.equals("created")) {
+                output = "addClass";
+                createdclass = (Classes) firstPage.input;
+            }
+            classList.add(
+                    new ClassData(
+                            createdclass.getClassName(),
+                            "unknown", // how to know login username or register one by the entering
+                            "Advanced Programming",
+                            createdclass.getRoomNumber(),
+                            R.drawable.b1));
+
+        } catch (NullPointerException e) {
+            e.getMessage();
         }
         //adding some items to our list
-        classList.add(
-                new ClassData(
-                        createdclass.getClassName(),
-                        "unknown", // how to know login username or register one by the entering
-                        "Advanced Programming",
-                        createdclass.getRoomNumber(),
-                        R.drawable.b1));
 
 
         //creating recyclerview adapter
@@ -145,14 +149,14 @@ class MyTaskFirstPage extends AsyncTask<String, Void, Void> {
             @Override
             public void run() {
                 while (true) {
-                    if (createClass.output != null) {
+                    if (firstPage.output != null) {
                         try {
-                            output.writeObject(createClass.output);
+                            output.writeObject(firstPage.output);
                             output.flush();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        createClass.output = null;
+                        firstPage.output = null;
                     }
                 }
 
@@ -163,7 +167,7 @@ class MyTaskFirstPage extends AsyncTask<String, Void, Void> {
             public void run() {
                 while (true) {
                     try {
-                        createClass.input = input.readObject();
+                        firstPage.input = input.readObject();
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
