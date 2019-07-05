@@ -49,7 +49,7 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signUpButton:
-                startActivity(new Intent(loginPageMain.this, CardDemoActivity.class));
+                startActivity(new Intent(loginPageMain.this, signUpPageMain.class));
                 break;
             case R.id.loginButton:
                 infoCheck();
