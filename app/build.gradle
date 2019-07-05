@@ -35,5 +35,7 @@ dependencies {
     implementation 'com.karumi:dexter:5.0.0'
     final lastestMaterialDrawerRelease = "6.0.9"
     implementation "com.mikepenz:materialdrawer:${lastestMaterialDrawerRelease}"
-
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'io.github.yavski:fab-speed-dial:1.0.6'
 }
+
