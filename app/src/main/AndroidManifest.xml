@@ -18,7 +18,6 @@
         <activity android:name=".addAssignment" />
         <activity android:name=".studentInfo" />
         <activity android:name=".settingPage" />
-        <activity android:name=".classworkPage" />
         <activity android:name=".classPage" />
         <activity android:name=".joinClass" />
         <activity android:name=".aboutUs" />
