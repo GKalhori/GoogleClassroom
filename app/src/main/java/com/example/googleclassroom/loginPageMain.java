@@ -3,6 +3,8 @@ package com.example.googleclassroom;
 import com.example.googleclassroom.utility.User;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +36,8 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page_main);
 
+        getSupportActionBar().setTitle("Sign up Page");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032205")));
         new MyTaskLogin().execute();
 
         usernameLogin = (EditText) findViewById(R.id.usernameLogin);

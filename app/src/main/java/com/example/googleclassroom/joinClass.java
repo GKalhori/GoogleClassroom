@@ -18,6 +18,8 @@ private ActionBar actionBar ;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_class);
+        getSupportActionBar().setTitle("Join Class");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032205")));
 //        actionBar=getSupportActionBar();
 //        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#CED0D8")));
         Toolbar toolbarjoin = findViewById(R.id.toolbarjoin) ;

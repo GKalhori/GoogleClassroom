@@ -1,6 +1,8 @@
 package com.example.googleclassroom;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,8 @@ public class firstPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
+        getSupportActionBar().setTitle("First Page");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032205")));
         mDrawerlayuot = (DrawerLayout) findViewById(R.id.material_drawer_account_header);
         mToggle = new ActionBarDrawerToggle(this,mDrawerlayuot,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         mToggle.syncState();
