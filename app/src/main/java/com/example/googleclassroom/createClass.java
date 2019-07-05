@@ -49,7 +49,7 @@ public class createClass extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.create);
         getSupportActionBar().setTitle("Create Class");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032205")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F3939")));
 //         setSupportActionBar(toolbar);
 //         actionBar=getSupportActionBar();
 //         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
