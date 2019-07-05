@@ -76,7 +76,6 @@ public class createClass extends AppCompatActivity {
                 startActivity(new Intent(createClass.this, aboutUs.class));
                 break;
             case R.id.createclass:
-                Log.d("ta20", "start");
                 createProcess();
                 Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(createClass.this, classPage.class));

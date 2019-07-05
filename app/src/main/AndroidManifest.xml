@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".detailassignment"></activity>
+        <activity android:name=".CardDemoActivity"></activity>
+        <activity android:name=".classesList" />
+        <activity android:name=".detailassignment" />
         <activity android:name=".addAssignment" />
         <activity android:name=".studentInfo" />
         <activity android:name=".settingPage" />
@@ -25,7 +27,9 @@
         <activity android:name=".signUpPageMain" />
         <activity android:name=".loginPageMain" />
         <activity android:name=".firstPage" />
-        <activity android:name=".createClass" android:exported="true"/>
+        <activity
+            android:name=".createClass"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
