@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 public class createClass extends AppCompatActivity {
-    private ActionBar actionBar ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

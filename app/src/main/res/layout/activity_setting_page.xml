@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="89dp" />
 
     <EditText
-        android:id="@+id/sectionText"
+        android:id="@+id/classNameText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -35,7 +35,7 @@
 
 
     <EditText
-        android:id="@+id/roomText"
+        android:id="@+id/RoomNumberText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/subjectText"
+        android:id="@+id/classDescriptionText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
