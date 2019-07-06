@@ -71,12 +71,15 @@ public class createClass extends AppCompatActivity {
                 startActivity(new Intent(createClass.this, aboutUs.class));
                 break;
             case R.id.createclass:
-                createProcess();
-                Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
-                firstPage.imageViewBoard.setVisibility(View.GONE);
-                firstPage.textViewFirstclass.setVisibility(View.GONE);
+                if (infoCheck())
+                    createProcess();
+                try {
+                    firstPage.imageViewBoard.setVisibility(View.GONE);
+                    firstPage.textViewFirstclass.setVisibility(View.GONE);
+                } catch (NullPointerException e) {
+                    e.getMessage();
+                }
                 createScroll();
-                startActivity(new Intent(createClass.this, classPage.class));
                 break;
             case R.id.close:
                 startActivity(new Intent(createClass.this, firstPage.class));
@@ -106,16 +109,17 @@ public class createClass extends AppCompatActivity {
         try {
 
             Classes createdclass = (Classes) input;
-            //adding some items to our list
-            int[] images = {R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4};
+            int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4, R.drawable.b5};
             Random rand = new Random();
             int pic = images[rand.nextInt(images.length)];
-
+            String des = createdclass.getDescription();
+            if (des.equals(null))
+                des = "";
             firstPage.classList.add(
                     new ClassData(
                             createdclass.getClassName(),
-                            createdclass.getProductor(), // how to know login username or register one by the entering???
-                            createdclass.getDescription(),
+                            createdclass.getProductor(),
+                            des,
                             createdclass.getRoomNumber(),
                             pic));
             //creating recyclerview adapter
@@ -143,20 +147,29 @@ public class createClass extends AppCompatActivity {
             e.printStackTrace();
         }
         System.out.println(input);
+        startActivity(new Intent(createClass.this, classPage.class));
+        Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
     }
 
-    public void infoCheck() {
+    public Boolean infoCheck() {
         if (classNameText.getText().toString().length() == 0 && roomNumberText.getText().toString().length() == 0) {
-            classNameText.setError("you should name this class!");
-            roomNumberText.setError("you should choose roomnumber!");
-        } else if (roomNumberText.getText().toString().length() == 0)
-            roomNumberText.setError("you should choose roomnumber!");
-        else if (classNameText.getText().toString().length() == 0)
-            classNameText.setError("you should name this class!");
-        else {
+            classNameText.setError("Class name can't be empty!");
+            roomNumberText.setError("Classroom number can't be empty!");
+            return false;
+        }
+        if (roomNumberText.getText().toString().length() == 0) {
+            roomNumberText.setError("Classroom number can't be empty!");
+            return false;
+        }
+        if (classNameText.getText().toString().length() == 0) {
+
+            classNameText.setError("Class name can't be empty!");
+            return false;
+        } else {
             roomNumberText.setError(null);
             classNameText.setError(null);
         }
+        return true;
     }
 }
 
