@@ -107,9 +107,10 @@ public class createClass extends AppCompatActivity {
 
             Classes createdclass = (Classes) input;
             //adding some items to our list
-            int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4, R.drawable.b5};
+            int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4};
             Random rand = new Random();
             int i = images[rand.nextInt(images.length)];
+
             firstPage.classList.add(
                     new ClassData(
                             createdclass.getClassName(),
@@ -121,6 +122,7 @@ public class createClass extends AppCompatActivity {
             ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
             //setting adapter to recyclerview
             recyclerView.setAdapter(adapter);
+
         } catch (ClassCastException ce) {
             ce.getCause();
         } catch (NullPointerException e) {
