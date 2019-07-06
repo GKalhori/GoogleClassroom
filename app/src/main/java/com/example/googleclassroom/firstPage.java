@@ -73,29 +73,32 @@ public class firstPage extends AppCompatActivity {
         try {
             if (createClass.input.equals("created")) {
                 output = "addClass";
-                createdclass = (Classes) firstPage.input;
             }
-            classList.add(
-                    new ClassData(
-                            createdclass.getClassName(),
-                            "unknown", // how to know login username or register one by the entering
-                            "Advanced Programming",
-                            createdclass.getRoomNumber(),
-                            R.drawable.b1));
 
         } catch (NullPointerException e) {
             e.getMessage();
         }
+
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(input);
+
+        createdclass = (Classes) input;
         //adding some items to our list
-
-
+        classList.add(
+                new ClassData(
+                        createdclass.getClassName(),
+                        "unknown", // how to know login username or register one by the entering
+                        "Advanced Programming",
+                        createdclass.getRoomNumber(),
+                        R.drawable.b1));
         //creating recyclerview adapter
         ClassDataAdapter adapter = new ClassDataAdapter(this, classList);
-
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
-
-
     }
 
 

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class Classes implements Serializable {
     String className, description, action;
-    int roomNumber, classCode;
+    int classCode;
+    int roomNumber;
     ArrayList<String> students = new ArrayList<>();
     ArrayList<String> masters = new ArrayList<>();
 
