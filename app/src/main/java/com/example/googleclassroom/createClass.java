@@ -106,6 +106,19 @@ public class createClass extends AppCompatActivity {
         }
         System.out.println(input);
     }
+    public void infoCheck() {
+        if (classNameText.getText().toString().length() == 0 && roomNumberText.getText().toString().length() == 0) {
+            classNameText.setError("you should name this class!");
+            roomNumberText.setError("you should choose roomnumber!");
+        } else if (roomNumberText.getText().toString().length() == 0)
+            roomNumberText.setError("you should choose roomnumber!");
+        else if (classNameText.getText().toString().length() == 0)
+            classNameText.setError("you should name this class!");
+        else {
+            roomNumberText.setError(null);
+            classNameText.setError(null);
+        }
+    }
 }
 
 class MyTaskCreateClass extends AsyncTask<String, Void, Void> {

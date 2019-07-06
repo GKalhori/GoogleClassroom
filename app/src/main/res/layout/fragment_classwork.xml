@@ -7,44 +7,17 @@
     android:padding="16dp"
     >
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:text="classwork fragment"-->
-        <!--/>-->
-        <!--android:textSize="30dp" />-->
-
     <!--<io.github.yavski.fabspeeddial.FabSpeedDial-->
-        <!--android:id="@+id/fabSpeedDial"-->
+        <!--android:id="@+id/fabspeed"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_gravity="bottom|end"-->
         <!--app:fabGravity="bottom_end"-->
         <!--app:fabMenu="@menu/fabmenu"-->
-        <!--app:miniFabBackgroundTint="?attr/color"-->
-        <!--app:miniFabDrawableTint="@color/primary_dark"-->
-        <!--app:miniFabTitleTextColor="@color/action"-->
+        <!--app:miniFabBackgroundTint="@android:color/background_light"-->
+        <!--app:miniFabDrawableTint="@color/action"-->
+        <!--app:miniFabTitleTextColor="@color/primary_dark"-->
 
-    <!--/>-->
-    <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/myFAB"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|end"-->
-
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_marginRight="5dp"-->
-        <!--android:layout_marginBottom="5dp"-->
-        <!--android:backgroundTint="@color/primary_dark"-->
-        <!--android:onClick="addnew"-->
-        <!--android:src="@drawable/ic_add"-->
-        <!--app:borderWidth="0dp"-->
-        <!--app:elevation="4dp"-->
-        <!--app:rippleColor="#000000"-->
         <!--/>-->
-
 
 </FrameLayout>

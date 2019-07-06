@@ -2,6 +2,10 @@ package com.example.googleclassroom;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +29,8 @@ import com.example.googleclassroom.utility.Classes;
 
 public class firstPage extends AppCompatActivity {
 
+    private DrawerLayout mDrawerlayout ;
+    private ActionBarDrawerToggle mToggle ;
     //a list to store all the products
     List<ClassData> classList;
 
@@ -49,18 +55,20 @@ public class firstPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
+        mDrawerlayout = findViewById(R.id.drawer_layout);
+        mToggle = new ActionBarDrawerToggle(this,mDrawerlayout,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        mDrawerlayout.addDrawerListener(mToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        NavigationView navigationView = findViewById(R.id.navbar);
+        navigationView.setNavigationItemSelectedListener(this::onOptionsItemSelected);
+
+
         new MyTaskFirstPage().execute();
 
         imageViewBoard = (ImageView) findViewById(R.id.imageViewBoard);
         textViewFirstclass = (TextView) findViewById(R.id.textViewFirstclass);
-//        Toolbar toolbar = findViewById(R.id.toolbar) ;
-//        setSupportActionBar(toolbar);
-//        android.support.v7.app.ActionBar ab = getSupportActionBar();
-//       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar) ;
-//       // setSupportActionBar(toolbar);
-//        ab.setLogo(R.drawable.ic_launcher_background);
-//        ab.setDisplayUseLogoEnabled(true);
-//        ab.setDisplayShowHomeEnabled(true);
 
         //getting the recyclerview from xml
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -89,6 +97,7 @@ public class firstPage extends AppCompatActivity {
         //adding some items to our list
 
 
+
         //creating recyclerview adapter
         ClassDataAdapter adapter = new ClassDataAdapter(this, classList);
 
@@ -98,6 +107,17 @@ public class firstPage extends AppCompatActivity {
 
     }
 
+
+
+//    @Override
+//    public void onBackPressed() {
+//        if (drawer.isDrawerOpen(GravityCompat.START)){
+//            drawer.closeDrawer(GravityCompat.START);
+//        }
+//        else {
+//            super.onBackPressed();
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,6 +129,9 @@ public class firstPage extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
         switch (item.getItemId()) {
             case R.id.more_vertt:
                 startActivity(new Intent(firstPage.this, aboutUs.class));
@@ -122,10 +145,8 @@ public class firstPage extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Let's join class", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(firstPage.this, joinClass.class));
                 break;
-            default:
-                return super.onOptionsItemSelected(item);
-
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
