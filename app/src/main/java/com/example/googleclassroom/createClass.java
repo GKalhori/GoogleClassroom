@@ -107,9 +107,9 @@ public class createClass extends AppCompatActivity {
 
             Classes createdclass = (Classes) input;
             //adding some items to our list
-            int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4};
+            int[] images = {R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4};
             Random rand = new Random();
-            int i = images[rand.nextInt(images.length)];
+            int pic = images[rand.nextInt(images.length)];
 
             firstPage.classList.add(
                     new ClassData(
@@ -117,7 +117,7 @@ public class createClass extends AppCompatActivity {
                             createdclass.getProductor(), // how to know login username or register one by the entering???
                             createdclass.getDescription(),
                             createdclass.getRoomNumber(),
-                            i));
+                            pic));
             //creating recyclerview adapter
             ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
             //setting adapter to recyclerview
