@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Random;
+
+import static com.example.googleclassroom.firstPage.recyclerView;
 
 public class createClass extends AppCompatActivity {
 
@@ -51,16 +54,6 @@ public class createClass extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.create);
         getSupportActionBar().setTitle("Create Class");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F3939")));
-
-        //         setSupportActionBar(toolbar);
-//         actionBar=getSupportActionBar();
-//         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#312727")));
-//         actionBar.setTitle("Create class");
-
-//        if (classNameText.toString()!=null && roomNumberText.toString()!=null)
-//        {
-//            getSupportActionBar().setDisplayShowTitleEnabled(true);
-//        }
     }
 
     @Override
@@ -82,6 +75,7 @@ public class createClass extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Class created!", Toast.LENGTH_LONG).show();
                 firstPage.imageViewBoard.setVisibility(View.GONE);
                 firstPage.textViewFirstclass.setVisibility(View.GONE);
+                createScroll();
                 startActivity(new Intent(createClass.this, classPage.class));
                 break;
             case R.id.close:
@@ -91,6 +85,47 @@ public class createClass extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void createScroll() {
+        try {
+            if (input.equals("created")) {
+                output = "addClass";
+            }
+
+        } catch (NullPointerException e) {
+            e.getMessage();
+        }
+
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(input);
+        try {
+
+            Classes createdclass = (Classes) input;
+            //adding some items to our list
+            int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4, R.drawable.b5};
+            Random rand = new Random();
+            int i = images[rand.nextInt(images.length)];
+            firstPage.classList.add(
+                    new ClassData(
+                            createdclass.getClassName(),
+                            createdclass.getProductor(), // how to know login username or register one by the entering???
+                            createdclass.getDescription(),
+                            createdclass.getRoomNumber(),
+                            i));
+            //creating recyclerview adapter
+            ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
+            //setting adapter to recyclerview
+            recyclerView.setAdapter(adapter);
+        } catch (ClassCastException ce) {
+            ce.getCause();
+        } catch (NullPointerException e) {
+            e.getMessage();
+        }
     }
 
     public void createProcess() {
@@ -117,7 +152,7 @@ class MyTaskCreateClass extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            socket = new Socket("192.168.1.52", 8888);
+            socket = new Socket("192.168.43.81", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

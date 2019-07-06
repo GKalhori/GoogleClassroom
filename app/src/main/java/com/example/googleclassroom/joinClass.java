@@ -104,7 +104,7 @@ class MyTaskJoinClass extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            socket = new Socket("192.168.1.52", 8888);
+            socket = new Socket("192.168.43.81", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

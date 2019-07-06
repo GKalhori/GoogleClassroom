@@ -42,7 +42,7 @@ public class ClassDataAdapter extends RecyclerView.Adapter<ClassDataAdapter.Prod
         holder.classDescribe.setText(classData.getDescription());
         // else if master student
         holder.numberOrMaster.setText(String.valueOf(classData.getMasterName()));
-        holder.classBackground.setImageDrawable(mCtx.getResources().getDrawable(classData.getImage()));
+        holder.classBackground.setBackground(mCtx.getResources().getDrawable(classData.getImage()));
     }
 
 

@@ -26,10 +26,10 @@ import com.example.googleclassroom.utility.Classes;
 public class firstPage extends AppCompatActivity {
 
     //a list to store all the products
-    List<ClassData> classList;
+    static List<ClassData> classList;
 
     //the recyclerview
-    RecyclerView recyclerView;
+    static RecyclerView recyclerView;
 
     static ImageView imageViewBoard;
     static TextView textViewFirstclass;
@@ -53,14 +53,6 @@ public class firstPage extends AppCompatActivity {
 
         imageViewBoard = (ImageView) findViewById(R.id.imageViewBoard);
         textViewFirstclass = (TextView) findViewById(R.id.textViewFirstclass);
-//        Toolbar toolbar = findViewById(R.id.toolbar) ;
-//        setSupportActionBar(toolbar);
-//        android.support.v7.app.ActionBar ab = getSupportActionBar();
-//       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar) ;
-//       // setSupportActionBar(toolbar);
-//        ab.setLogo(R.drawable.ic_launcher_background);
-//        ab.setDisplayUseLogoEnabled(true);
-//        ab.setDisplayShowHomeEnabled(true);
 
         //getting the recyclerview from xml
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -69,37 +61,8 @@ public class firstPage extends AppCompatActivity {
 
         //initializing the productlist
         classList = new ArrayList<>();
-
-        try {
-            if (createClass.input.equals("created")) {
-                output = "addClass";
-            }
-
-        } catch (NullPointerException e) {
-            e.getMessage();
-        }
-
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(input);
-
-        createdclass = (Classes) input;
-        //adding some items to our list
-        classList.add(
-                new ClassData(
-                        createdclass.getClassName(),
-                        "unknown", // how to know login username or register one by the entering
-                        "Advanced Programming",
-                        createdclass.getRoomNumber(),
-                        R.drawable.b1));
-        //creating recyclerview adapter
-        ClassDataAdapter adapter = new ClassDataAdapter(this, classList);
-        //setting adapter to recyclerview
-        recyclerView.setAdapter(adapter);
     }
+
 
 
     @Override
@@ -141,7 +104,7 @@ class MyTaskFirstPage extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            socket = new Socket("192.168.1.52", 8888);
+            socket = new Socket("192.168.43.81", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

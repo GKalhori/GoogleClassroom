@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Classes implements Serializable {
-    String className, description, action;
-    int classCode;
-    int roomNumber;
+    String className, description, action,productor;
+    int roomNumber,classCode;
     ArrayList<String> students = new ArrayList<>();
     ArrayList<String> masters = new ArrayList<>();
 
@@ -15,6 +14,14 @@ public class Classes implements Serializable {
         this.className = className;
         this.roomNumber = roomNumber;
         this.description = description;
+    }
+
+    public void setProductor(String productor) {
+        this.productor = productor;
+    }
+
+    public String getProductor() {
+        return productor;
     }
 
     public String getAction() {
@@ -35,5 +42,21 @@ public class Classes implements Serializable {
 
     public int getRoomNumber() {
         return roomNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ArrayList<String> getMasters() {
+        return masters;
+    }
+
+    public ArrayList<String> getStudents() {
+        return students;
+    }
+
+    public void setMasters(ArrayList<String> masters) {
+        this.masters = masters;
     }
 }
