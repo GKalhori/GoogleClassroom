@@ -36,8 +36,7 @@ public class loginPageMain extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page_main);
 
-        getSupportActionBar().setTitle("Login");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#162FBD")));
+        getSupportActionBar().hide();
 
         new MyTaskLogin().execute();
 

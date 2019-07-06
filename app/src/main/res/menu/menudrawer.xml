@@ -12,7 +12,7 @@
         <item
             android:id="@+id/calendar"
             android:title="Calendar"
-
+            android:icon="@drawable/ic_calendar"
             />
         <item
             android:id="@+id/Notif"
@@ -21,10 +21,18 @@
             />
     </group>
     <item
-        android:title="Teaching" >
+        android:title="More Options" >
         <menu>
-
-
+<item
+    android:id="@+id/setnav"
+    android:icon="@drawable/ic_setting"
+    android:title="Setting"
+    />
+            <item
+                android:id="@+id/ask"
+                android:title="Help"
+                android:icon="@drawable/ic_ask"
+                />
         </menu>
 
     </item>

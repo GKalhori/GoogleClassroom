@@ -11,13 +11,12 @@
         ></item>
     <item
         android:id="@+id/close"
-        android:title="close"
+        android:enabled="true"
         android:icon="@drawable/ic_closee"
-        app:showAsAction="always"
-        />
+        android:title="close"
+        app:showAsAction="always" />
     <item
         android:id="@+id/joinclass"
-        android:enabled="false"
         android:title="JOIN"
         app:showAsAction="ifRoom" />
 

@@ -65,8 +65,8 @@ public class signUpPageMain extends AppCompatActivity implements View.OnClickLis
 
         switch (v.getId()) {
             case R.id.registerButton:
-                infoCheck();
-                registerCheck();
+                if (infoCheck())
+                    registerCheck();
                 break;
             case R.id.getImageButton:
                 handleImage();
@@ -101,30 +101,40 @@ public class signUpPageMain extends AppCompatActivity implements View.OnClickLis
         startActivityForResult(intent, imagePickCode);
     }
 
-    public void infoCheck() {
+    public Boolean infoCheck() {
         if (passwordSignUp.getText().toString().length() == 0 && usernameSignUp.getText().toString().length() == 0 && confirmPassword.getText().toString().length() == 0) {
             passwordSignUp.setError("Password field can't be empty!");
             usernameSignUp.setError("Username field can't be empty!");
             confirmPassword.setError("Confirm field can't be empty!");
+            return false;
         }
-        if (usernameSignUp.getText().toString().length() == 0)
+        if (usernameSignUp.getText().toString().length() == 0) {
             usernameSignUp.setError("Username field can't be empty!");
+            return false;
+        }
 
-        if (passwordSignUp.getText().toString().length() == 0)
+        if (passwordSignUp.getText().toString().length() == 0) {
             passwordSignUp.setError("Password field can't be empty!");
+            return false;
+        }
 
-        if (confirmPassword.getText().toString().length() == 0)
+        if (confirmPassword.getText().toString().length() == 0) {
             confirmPassword.setError("Confirm field can't be empty!");
-
-        else {
+            return false;
+        }
+        if (passwordSignUp.getText().toString().length() != 0 && passwordSignUp.getText().toString().length() < 6) {
+            passwordSignUp.setError("Password must be longer than 5 characters");
+            return false;
+        }
+        if (!(confirmPassword.getText().toString().equals(passwordSignUp.getText().toString())) && confirmPassword.getText().toString().length() != 0) {
+            confirmPassword.setError("Password doesn't match");
+            return false;
+        } else {
             usernameSignUp.setError(null);
             passwordSignUp.setError(null);
             confirmPassword.setError(null);
         }
-        if (passwordSignUp.getText().toString().length() != 0 && passwordSignUp.getText().toString().length() < 6)
-            passwordSignUp.setError("Password must be longer than 5 characters");
-        if (!(confirmPassword.getText().toString().equals(passwordSignUp.getText().toString())) && confirmPassword.getText().toString().length() != 0)
-            confirmPassword.setError("Password doesn't match");
+        return true;
     }
 
     public void registerCheck() {

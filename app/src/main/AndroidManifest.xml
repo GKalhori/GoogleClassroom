@@ -14,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CalendarPage"></activity>
+        <activity android:name=".navdrawerpage" />
         <activity android:name=".detailassignment" />
         <activity android:name=".addAssignment" />
         <activity android:name=".studentInfo" />

@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getStarted = (Button) findViewById(R.id.getStartedButton);
 
-        getSupportActionBar().setTitle("Google Classroom");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032205")));
+        getSupportActionBar().hide();
+
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,15 +1,12 @@
 package com.example.googleclassroom;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,15 +15,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.googleclassroom.utility.Classes;
-import com.example.googleclassroom.firstPage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Random;
-
-import static com.example.googleclassroom.firstPage.recyclerView;
 
 public class createClass extends AppCompatActivity {
 
@@ -51,9 +45,8 @@ public class createClass extends AppCompatActivity {
         roomNumberText = (EditText) findViewById(R.id.roomNumberText);
         classDescriptionText = (EditText) findViewById(R.id.classDescriptionText);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.create);
         getSupportActionBar().setTitle("Create Class");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F3939")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AAA8BF")));
     }
 
     @Override
@@ -66,7 +59,6 @@ public class createClass extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
             case R.id.more_vertt:
                 startActivity(new Intent(createClass.this, aboutUs.class));
                 break;
@@ -76,6 +68,7 @@ public class createClass extends AppCompatActivity {
                 try {
                     firstPage.imageViewBoard.setVisibility(View.GONE);
                     firstPage.textViewFirstclass.setVisibility(View.GONE);
+                    firstPage.buttonNav.setVisibility(View.GONE);
                 } catch (NullPointerException e) {
                     e.getMessage();
                 }

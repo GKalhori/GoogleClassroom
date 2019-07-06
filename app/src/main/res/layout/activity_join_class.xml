@@ -8,48 +8,19 @@
     android:padding="16dp"
     tools:context="com.example.googleclassroom.joinClass">
 
-    <include
-        android:id="@+id/toolbarjoin"
-        layout="@layout/toolbarjoin"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/md_light_green_700"
-        android:textDirection="ltr"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="-3dp" />
-
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/infoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="-301dp"
-        tools:layout_editor_absoluteY="-127dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="123dp"
-        android:layout_height="41dp"
-        android:background="#008D6161"
-        android:text="Join class"
-        android:textColor="@color/colorAccent"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="32dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_close"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="25dp" />
-
+        android:layout_marginTop="30dp"
+        android:text="Ask your teacher for the class code, then enter it here."
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="50dp"
         app:errorEnabled="true">
 
@@ -57,10 +28,10 @@
             android:id="@+id/classCodeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="50dp"
             android:hint="Class Code"
             android:inputType="text" />
+
 
     </android.support.design.widget.TextInputLayout>
 

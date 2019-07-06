@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public class firstPage extends AppCompatActivity {
     static RecyclerView recyclerView;
     static ImageView imageViewBoard;
     static TextView textViewFirstclass;
+    static Button buttonNav;
 
     public static Object input;
     public static Object output;
@@ -48,6 +51,7 @@ public class firstPage extends AppCompatActivity {
 
         imageViewBoard = (ImageView) findViewById(R.id.imageViewBoard);
         textViewFirstclass = (TextView) findViewById(R.id.textViewFirstclass);
+        buttonNav = (Button) findViewById(R.id.buttonNav);
 
         //getting the recyclerview from xml
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -56,6 +60,13 @@ public class firstPage extends AppCompatActivity {
 
         //initializing the productlist
         classList = new ArrayList<>();
+
+        buttonNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(firstPage.this, navdrawerpage.class));
+            }
+        });
     }
 
 

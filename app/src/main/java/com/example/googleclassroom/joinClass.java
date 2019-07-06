@@ -3,24 +3,28 @@ package com.example.googleclassroom;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.googleclassroom.utility.Classes;
+import com.example.googleclassroom.utility.Codes;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Random;
 
 public class joinClass extends AppCompatActivity {
-    private ActionBar actionBar;
+
     EditText classCodeText;
 
     public static Object input;
@@ -35,23 +39,19 @@ public class joinClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_class);
-        getSupportActionBar().setTitle("Join Class");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F3939")));
-//        actionBar=getSupportActionBar();
-//        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#CED0D8")));
-        Toolbar toolbarjoin = findViewById(R.id.toolbarjoin);
-        setSupportActionBar(toolbarjoin);
-        this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 
         new MyTaskJoinClass().execute();
 
         classCodeText = (EditText) findViewById(R.id.classCodeText);
 
+        getSupportActionBar().setTitle("Join Class");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AAA8BF")));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menujoin, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menujoin, menu);
         return true;
     }
 
@@ -59,12 +59,10 @@ public class joinClass extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.more_vertt:
-                Toast.makeText(getApplicationContext(), "Let's go to About Us Page", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(joinClass.this, aboutUs.class));
                 break;
-            case R.id.join:
+            case R.id.joinclass:
                 joinProcess();
-
                 break;
             case R.id.close:
                 startActivity(new Intent(joinClass.this, firstPage.class));
@@ -74,24 +72,50 @@ public class joinClass extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void joinProcess(){
-        String classCode = classCodeText.getText().toString();
-        output = classCode;
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(input);
-        try {
-            if (input.equals("joined")) {
-                Toast.makeText(getApplicationContext(), "You Joined Class!", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(joinClass.this, classPage.class));
+
+    public void joinProcess() {
+        int classCode = Integer.parseInt(classCodeText.getText().toString());
+        if (classCodeText.getText().toString().length() == 0) {
+            classCodeText.setError("Class code can't be empty!");
+        } else {
+            Codes classCode1 = new Codes(classCode);
+            output = classCode1;
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }
-        catch (NullPointerException e)
-        {
-            e.getMessage();
+            System.out.println(input);
+            try {
+                if (input.equals("wrongCode")) {
+                    Toast.makeText(getApplicationContext(), "Wrong code!", Toast.LENGTH_LONG).show();
+                } else {
+                    Classes joinedClass = (Classes) input;
+                    int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4, R.drawable.b5};
+                    Random rand = new Random();
+                    int pic = images[rand.nextInt(images.length)];
+                    firstPage.classList.add(
+                            new ClassData(
+                                    joinedClass.getClassName(),
+                                    joinedClass.getProductor(),
+                                    joinedClass.getDescription(),
+                                    joinedClass.getRoomNumber(),
+                                    pic));
+                    //creating recyclerview adapter
+                    ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
+                    //setting adapter to recyclerview
+                    firstPage.recyclerView.setAdapter(adapter);
+
+                    Toast.makeText(getApplicationContext(), "You Joined Class!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(joinClass.this, classPage.class));
+                    firstPage.imageViewBoard.setVisibility(View.GONE);
+                    firstPage.textViewFirstclass.setVisibility(View.GONE);
+                    firstPage.buttonNav.setVisibility(View.GONE);
+                }
+
+            } catch (NullPointerException e) {
+                e.getMessage();
+            }
         }
     }
 }

@@ -16,16 +16,16 @@
         android:id="@+id/imageViewBoard"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="150dp"
+        android:contentDescription="TODO"
         android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gray"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/logo_gray" />
 
     <TextView
         android:id="@+id/textViewFirstclass"
@@ -33,14 +33,22 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/recyclerView"
         android:layout_alignEnd="@+id/recyclerView"
-        android:layout_marginStart="93dp"
+        android:layout_marginStart="95dp"
         android:layout_marginTop="300dp"
-        android:layout_marginEnd="93dp"
+        android:layout_marginEnd="90dp"
         android:text="create a class to get started"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:text="Go to Nav Darwer" />
 
 </RelativeLayout>
