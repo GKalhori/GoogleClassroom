@@ -29,7 +29,7 @@ new BottomNavigationView.OnNavigationItemSelectedListener() {
                 selectedFragment = new peoplefragment();
                 break;
             case R.id.classwork:
-                selectedFragment = new classworkfragment();
+              //  selectedFragment = new classworkfragment();
                 break;
 //            case R.id.people:
 //                selectedFragment = new ();

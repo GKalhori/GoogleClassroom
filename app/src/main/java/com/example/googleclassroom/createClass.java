@@ -121,7 +121,7 @@ public class createClass extends AppCompatActivity {
             //creating recyclerview adapter
             ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
             //setting adapter to recyclerview
-            recyclerView.setAdapter(adapter);
+            firstPage.recyclerView.setAdapter(adapter);
 
         } catch (ClassCastException ce) {
             ce.getCause();
@@ -144,6 +144,7 @@ public class createClass extends AppCompatActivity {
         }
         System.out.println(input);
     }
+
     public void infoCheck() {
         if (classNameText.getText().toString().length() == 0 && roomNumberText.getText().toString().length() == 0) {
             classNameText.setError("you should name this class!");
