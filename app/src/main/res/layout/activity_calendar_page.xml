@@ -23,21 +23,11 @@
         android:textColor="@android:color/background_dark"
         android:textStyle="bold" />
 
-    <!-- Add CalenderView to display the Calender -->
     <CalendarView
         android:id="@+id/calender"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="19dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </CalendarView>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"></CalendarView>
 
-
-    <!--<CalendarView-->
-        <!--android:id="@+id/simpleCalendarView"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:firstDayOfWeek="2"-->
-        <!--android:maxDate="05/22/2017" />-->
-    <!-- set maximal date supported by this CalendarView -->
 </FrameLayout>

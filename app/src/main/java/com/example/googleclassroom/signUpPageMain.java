@@ -126,7 +126,7 @@ public class signUpPageMain extends AppCompatActivity implements View.OnClickLis
             passwordSignUp.setError("Password must be longer than 5 characters");
             return false;
         }
-        if (!(confirmPassword.getText().toString().equals(passwordSignUp.getText().toString())) && confirmPassword.getText().toString().length() != 0) {
+        if (!(confirmPassword.getText().toString().equals(passwordSignUp.getText().toString()))) {
             confirmPassword.setError("Password doesn't match");
             return false;
         } else {
@@ -200,7 +200,7 @@ class MyTaskRegister extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... strings) {
         try {
 
-            socket = new Socket("192.168.43.81", 8888);
+            socket = new Socket("192.168.0.12", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

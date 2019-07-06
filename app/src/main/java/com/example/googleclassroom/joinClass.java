@@ -94,13 +94,29 @@ public class joinClass extends AppCompatActivity {
                     int[] images = {R.drawable.b1, R.drawable.b2, R.drawable.b3, R.drawable.b4, R.drawable.b5};
                     Random rand = new Random();
                     int pic = images[rand.nextInt(images.length)];
-                    firstPage.classList.add(
-                            new ClassData(
-                                    joinedClass.getClassName(),
-                                    joinedClass.getProductor(),
-                                    joinedClass.getDescription(),
-                                    joinedClass.getRoomNumber(),
-                                    pic));
+                    output = "type";
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (input.equals("master")) {
+                        firstPage.classList.add(
+                                new ClassData(
+                                        joinedClass.getClassName(),
+                                        String.valueOf(joinedClass.studentsNumber()),
+                                        joinedClass.getDescription(),
+                                        joinedClass.getRoomNumber(),
+                                        pic));
+                    } else if (input.equals("student")) {
+                        firstPage.classList.add(
+                                new ClassData(
+                                        joinedClass.getClassName(),
+                                        joinedClass.getProductor(),
+                                        joinedClass.getDescription(),
+                                        joinedClass.getRoomNumber(),
+                                        pic));
+                    }
                     //creating recyclerview adapter
                     ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
                     //setting adapter to recyclerview
@@ -128,7 +144,7 @@ class MyTaskJoinClass extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            socket = new Socket("192.168.43.81", 8888);
+            socket = new Socket("192.168.0.12", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

@@ -11,14 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class classworkfragment extends Fragment {
+public class streamfragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        return inflater.inflate(R.layout.fragment_stream, container, false);
+        return inflater.inflate(R.layout.fragment_classwork, container, false);
 
     }
 
@@ -28,9 +28,9 @@ public class classworkfragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-   @Override
-   public boolean onContextItemSelected(MenuItem item) {
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
 
-       return super.onContextItemSelected(item);
-   }
+        return super.onContextItemSelected(item);
+    }
 }

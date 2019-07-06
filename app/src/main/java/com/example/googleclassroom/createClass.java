@@ -108,13 +108,29 @@ public class createClass extends AppCompatActivity {
             String des = createdclass.getDescription();
             if (des.equals(null))
                 des = "";
-            firstPage.classList.add(
-                    new ClassData(
-                            createdclass.getClassName(),
-                            createdclass.getProductor(),
-                            des,
-                            createdclass.getRoomNumber(),
-                            pic));
+            output = "type";
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (input.equals("master")) {
+                firstPage.classList.add(
+                        new ClassData(
+                                createdclass.getClassName(),
+                                String.valueOf(createdclass.studentsNumber()),
+                                des,
+                                createdclass.getRoomNumber(),
+                                pic));
+            } else if (input.equals("student")) {
+                firstPage.classList.add(
+                        new ClassData(
+                                createdclass.getClassName(),
+                                createdclass.getProductor(),
+                                des,
+                                createdclass.getRoomNumber(),
+                                pic));
+            }
             //creating recyclerview adapter
             ClassDataAdapter adapter = new ClassDataAdapter(this, firstPage.classList);
             //setting adapter to recyclerview
@@ -174,7 +190,7 @@ class MyTaskCreateClass extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            socket = new Socket("192.168.43.81", 8888);
+            socket = new Socket("192.168.0.12", 8888);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 

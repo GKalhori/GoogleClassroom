@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
@@ -26,10 +27,8 @@ public class CalendarPage extends AppCompatActivity {
         // which id is assign in xml file
         // use findViewById() to get the
         // CalendarView and TextView
-        calender = (CalendarView)
-                findViewById(R.id.calender);
-        date_view = (TextView)
-                findViewById(R.id.date_view);
+        calender = (CalendarView) findViewById(R.id.calender);
+        date_view = (TextView) findViewById(R.id.date_view);
 
         // Add Listener in calendar
         calender

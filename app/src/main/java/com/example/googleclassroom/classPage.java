@@ -28,12 +28,12 @@ new BottomNavigationView.OnNavigationItemSelectedListener() {
             case R.id.people:
                 selectedFragment = new peoplefragment();
                 break;
-            case R.id.classwork:
-              //  selectedFragment = new classworkfragment();
+            case R.id.stream:
+                selectedFragment = new classworkfragment();
                 break;
-//            case R.id.people:
-//                selectedFragment = new ();
-//                break;
+            case R.id.classwork:
+                selectedFragment = new streamfragment();
+                break;
 
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit() ;
